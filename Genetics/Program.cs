@@ -13,7 +13,7 @@ namespace Genetics
             watch.Start();
             TravellingSalesPerson tsp = new TravellingSalesPerson(20);
 
-            TSPProblem tspDna = new TSPProblem(tsp, 30, 0.1, 0.8, 0.1, 0.2, 1000);
+            TSPProblem tspDna = new TSPProblem(tsp, 100, 0.1, 0.8, 0.1, 1, 1000);
             
             DNA<int> best = tspDna.Do();
             Console.WriteLine("Best: " + best.Fitness);
@@ -22,7 +22,7 @@ namespace Genetics
             int upgrades = 0;
             for (int i = 0; i < 1000; i++)
             {
-                TSPProblem tspDna2 = new TSPProblem(dna, tsp, 30, 1.0 / rand.Next(1, 5), 1.0 / rand.Next(1, 11), 1.0 / rand.Next(5, 11), 1.0 / rand.Next(4, 8), rand.Next(500, 2000));
+                TSPProblem tspDna2 = new TSPProblem(dna, tsp, 100, 0.1, 0.8, 0.1, 1, 1000);
 
                 DNA<int> best2 = tspDna2.Do();
                 Console.WriteLine("["+i.ToString() + "] Best: " + best2.Fitness);   

@@ -163,6 +163,7 @@ namespace Genetics
                         DNA<T> parent2 = null;
                         ChooseParents(SummedFitness, ref parent1, ref parent2);
                         DNA<T> child = Crossover(parent1, parent2);
+                        child.Fitness = CalculateFitness(child);
                         if (child.Fitness != parent1.Fitness && child.Fitness != parent2.Fitness)
                         {
                             NewPopulation[j] = child;
